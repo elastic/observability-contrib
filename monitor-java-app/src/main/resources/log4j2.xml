@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+  <Appenders>
+    <Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="%highlight{%d{ISO8601_OFFSET_DATE_TIME_HHCMM} [%-5level] %logger{36} %msg%n}"/>
+    </Console>
+
+    <RollingFile name="JavalinAppLogRolling" fileName="/tmp/javalin/app.log" filePattern="/tmp/javalin/%d{yyyy-MM-dd}-%i.log.gz">
+      <EcsLayout serviceName="my-javalin-app"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy />
+        <SizeBasedTriggeringPolicy size="50 MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="20"/>
+    </RollingFile>
+  </Appenders>
+
+  <Loggers>
+    <Logger name="de.spinscale.javalin.App" level="INFO"/>
+    <Root level="ERROR">
+      <AppenderRef ref="Console" />
+      <AppenderRef ref="JavalinAppLogRolling" />
+    </Root>
+  </Loggers>
+</Configuration>
