@@ -1,4 +1,4 @@
-<h1 align='center'><img src='apm-logo.svg' alt='Elastic APM' width='32' valign='middle' /> Elastic Observability Contrib</h1>
+<h1 align='center'><img src='observability-logo.svg' alt='Elastic Observability' width='32' valign='middle' /> Elastic Observability Contrib</h1>
 
 <p align='center'>This repository includes contributions for Elastic Observability.</p>
 
